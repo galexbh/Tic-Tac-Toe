@@ -34,10 +34,10 @@ public class Controller extends ControllerHelpers{
 
     private int state = 0;
 
-    private int[][] array = { {2, 2, 2}, {2, 2, 2}, {2, 2, 2} };
+    private final int[][] array = { {2, 2, 2}, {2, 2, 2}, {2, 2, 2} };
 
     public void handlePress(ActionEvent actionEvent) {
-        int value = 0;
+        int value;
         Button button = (Button)actionEvent.getSource();
 
         value = Integer.parseInt(button.getText());
@@ -55,18 +55,18 @@ public class Controller extends ControllerHelpers{
         }
 
         if (ControllerHelpers.validatedStatusH(array) == 1){
-            lbl.setText("GANA X");
+            lbl.setText("WIN X");
             restart();
         }else if (ControllerHelpers.validatedStatusH(array) == 2){
-            lbl.setText("GANA 0");
+            lbl.setText("WIN 0");
             restart();
         }
 
         if (ControllerHelpers.validatedStatusV(array) == 1){
-            lbl.setText("GANA X");
+            lbl.setText("WIN X");
             restart();
         }else if (ControllerHelpers.validatedStatusV(array) == 2){
-            lbl.setText("GANA 0");
+            lbl.setText("WIN 0");
             restart();
         }
 
